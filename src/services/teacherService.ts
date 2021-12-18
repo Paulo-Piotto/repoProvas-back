@@ -12,4 +12,4 @@ export async function getSubjectTeachers (subject: string) {
     const teachers = await getRepository(Teacher).find({subject: subject});
     
     return teachers;
-  }
+}
