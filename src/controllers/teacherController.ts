@@ -16,7 +16,7 @@ export async function getAllTeachers (req: Request, res: Response) {
 }
 
 export async function getSubjectTeachers (req: Request, res: Response) {
-    const subject = req.body.subject
+    const subject = decodeURI(req.params.subject);
     try {
       const teachers = await teachersService.getSubjectTeachers(subject);
       if(teachers.length === 0){

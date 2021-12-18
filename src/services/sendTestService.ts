@@ -32,10 +32,10 @@ export async function sendTest(test: TestCreate) {
     if(teacher.length === 0){
       throw new SendTestError('O professor escolhido não existe');
     }
-    const testUrl = await getRepository(Test).find({url: test.url});
-    if(testUrl.length > 0){
-      throw new SendTestError('Essa prova já está em nosso acervo');
-    }
+    // const testUrl = await getRepository(Test).find({url: test.url});
+    // if(testUrl.length > 0){
+    //   throw new SendTestError('Essa prova já está em nosso acervo');
+    // }
 
   await getRepository(Test).insert(test);
 }
