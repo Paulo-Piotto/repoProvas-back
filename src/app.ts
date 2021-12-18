@@ -19,7 +19,8 @@ app.get("/subjects", subjectController.getSubjects);
 app.get("/teachers", teacherController.getAllTeachers);
 app.get("/teachers/:subject", teacherController.getSubjectTeachers);
 app.post("/send-test", sendTestController.sendTest);
-app.get("/get-tests/:teacher", getTestController.getTestsByTeacher);
+app.get("/get-tests/teacher/:teacher", getTestController.getTestsByTeacher);
+app.get("/get-tests/subject/:subject", getTestController.getTestsBySubject);
 
 export async function init () {
   await connectDatabase();
